@@ -3,5 +3,5 @@ resolver: lts-14.8
 packages:
 - .
 
-# extra-deps:
-# -
+extra-deps:
+- split-0.2.3.4
