@@ -11,6 +11,13 @@ packages:
       sha256: d931baa404f6867a23ed342c11ef27613227a7a82ba2324f95da184fffad0bd9
   original:
     hackage: split-0.2.3.4
+- completed:
+    hackage: terminal-size-0.3.2.1@sha256:7b2d8e0475a46961d07ddfb91dee618de70eff55d9ba0402ebeac1f9dcf9b18b,1259
+    pantry-tree:
+      size: 580
+      sha256: bdd64a618bdb54e93ed043f8c21d56b5447bfa5e706cda2b54e5b2a5efd6d297
+  original:
+    hackage: terminal-size-0.3.2.1
 snapshots:
 - completed:
     size: 524789

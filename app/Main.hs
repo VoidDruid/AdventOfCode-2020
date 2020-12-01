@@ -3,6 +3,7 @@ module Main where
 import System.Environment (getArgs)
 
 import Data.List.Split
+import System.Console.Terminal.Size
 
 import qualified Day1 (solver1)
 
@@ -33,6 +34,11 @@ main = do
                     (dayI, solverI, _) = getSolverData dayNum
                 in 
                     (dayI, solverI, getFilePath filename)
-    content <- readFile $ dataFile
+    content <- readFile dataFile
     let inputLines = lines content
+    termSize <- size
+    let dashCount = maybe 15 width termSize
+    putStrLn "ADVENT OF CODE 2020"
+    putStrLn $ "Running solution for day " ++ show (dayIndex + 1) ++ ", task " ++ show (solverIndex + 1) ++ " on file " ++ drop 5 dataFile
+    putStrLn [ '-' | _ <- [1..dashCount]]
     print $ (solvers !! dayIndex !! solverIndex ) inputLines

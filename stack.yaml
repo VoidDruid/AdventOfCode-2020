@@ -5,3 +5,4 @@ packages:
 
 extra-deps:
 - split-0.2.3.4
+- terminal-size-0.3.2.1
