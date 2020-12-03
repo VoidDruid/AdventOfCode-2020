@@ -5,10 +5,10 @@ import System.Environment (getArgs)
 import Data.List.Split
 import System.Console.Terminal.Size
 
-import qualified Day1 (solver1)
+import qualified Day1
 
 solvers = 
-    [ [ Day1.solver1 ]
+    [ [ Day1.solver1, Day1.solver2 ]
     ]
 
 getFilePath filename = "data/" ++ filename ++ ".txt"
@@ -41,4 +41,8 @@ main = do
     putStrLn "ADVENT OF CODE 2020"
     putStrLn $ "Running solution for day " ++ show (dayIndex + 1) ++ ", task " ++ show (solverIndex + 1) ++ " on file " ++ drop 5 dataFile
     putStrLn [ '-' | _ <- [1..dashCount]]
-    print $ (solvers !! dayIndex !! solverIndex ) inputLines
+    putStrLn $ (
+        case (solvers !! dayIndex !! solverIndex ) inputLines of
+            Nothing -> "No result"
+            Just v -> show v
+        )
