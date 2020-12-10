@@ -1,3 +1,5 @@
+{-# LANGUAGE ImpredicativeTypes #-}
+
 module Main where
 
 import System.Environment (getArgs)
@@ -6,9 +8,14 @@ import Data.List.Split
 import System.Console.Terminal.Size
 
 import qualified Day1
+import qualified Day2
+import qualified Day3
 
+solvers :: [[[String] -> Maybe Int]]
 solvers = 
     [ [ Day1.solver1, Day1.solver2 ]
+    , [ Day2.solver1, Day2.solver2 ]
+    , [ Day3.solver1, Day3.solver2 ]
     ]
 
 getFilePath filename = "data/" ++ filename ++ ".txt"

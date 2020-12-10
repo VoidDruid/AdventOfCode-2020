@@ -18,9 +18,10 @@ executable advent-of-code-exe
   main-is: Main.hs
   other-modules:
       Paths_advent_of_code
+    , Advent
     , Day1
     , Day2
-    , Advent
+    , Day3
   hs-source-dirs:
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
