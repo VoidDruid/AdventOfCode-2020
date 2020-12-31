@@ -1,5 +1,7 @@
 module Day3 where
 
+import Advent
+
 toMap :: [String] -> [[Int]]
 toMap = map (\lineRaw -> [ if char == '#' then 1 else 0 | char <- cycle lineRaw])
 iterLines mv (pos, s) line = (pos + mv, s + line !! pos)
@@ -20,8 +22,6 @@ solver2 inputLines =
             , (5, 1)
             , (7, 1)
             , (1, 2) ]
-        eachN _ [] = []
-        eachN n as  = head as : eachN n (drop n as)
         countSum (right, down) = foldl (iterLines right) (0, 0) (eachN down treeMap)
     in
         Just (product $ map (snd . countSum) patterns)
